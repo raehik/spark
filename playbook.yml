@@ -13,9 +13,7 @@
     - { role: fonts, tags: ['fonts'] }
     - { role: x, tags: ['x'] }
     - { role: lightdm, tags: ['lightdm'], when: "display_manager == 'lightdm'" }
-    - { role: gdm, tags: ['gdm'], when: "display_manager == 'gdm'" }
     - { role: i3, tags: ['i3'], when: "desktop_environment == 'i3'" }
-    - { role: gnome, tags: ['gnome'], when: "desktop_environment == 'gnome'" }
     - { role: pass, tags: ['pass'] }
     - { role: iptables, tags: ['iptables'] }
     - { role: nettools, tags: ['nettools'] }
@@ -61,9 +59,7 @@
     - { role: mapping, tags: ['mapping'] }
     - { role: sound, tags: ['sound'] }
     - { role: pim, tags: ['pim'] }
-    - { role: radio, tags: ['radio'] }
     - { role: formd, tags: ['formd'] }
-    - { role: postgresql, tags: ['postgresql'] }
     - { role: calibre, tags: ['calibre'] }
     - { role: aws, tags: ['aws'] }
     - { role: parcimonie, tags: ['parcimonie'], when: "tor is defined" }
