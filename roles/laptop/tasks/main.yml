@@ -1,6 +1,11 @@
 ---
 - include: tlp.yml
 
+- name: Ensure X11 config directory exists
+  file: path=/etc/X11/xorg.conf.d state=directory
+  tags:
+    - libinput
+
 - name: Copy touchpad configuration file
   copy: src=30-touchpad.conf dest=/etc/X11/xorg.conf.d/30-touchpad.conf
   tags:
