@@ -1,4 +1,6 @@
 # vim: ft=yaml
+bootloader: grub
+
 journal:
   max_size: 500M
 
