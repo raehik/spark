@@ -1,98 +1,146 @@
-dotfiles:
-    url: git@github.com:pigmonkey/dotfiles.git
-    destination: projects/dotfiles
-    rcup_flags: -fx README.md
+# vim: ft=yaml
+packages-base:
+  - {name: yay, type: aur, desc: AUR helper}
 
-aur:
-    dir: aur
-    packages:
-        - aura-bin
-        - downgrade
-        - zplug
-        - miller
-        - myrepos
-        - ctmg
+  # ssh
+  - openssh
+  - rxvt-unicode-terminfo
+  - termite-terminfo
 
-editors:
-    - gvim
+  # filesystems
+  - gptfdisk
+  - e2fsprogs
+  - dosfstools
+  - ntfs-3g
 
-video_drivers:
-    - libva-intel-driver
+  # general
+  - rsync
+  - acpi
 
-base_packages:
-    - base-devel
-    - pacman-contrib
-    - fwupd
-    - tmux
-    - git
-    - rsync
-    - glances
-    - coreutils
-    - moreutils
-    - dateutils
-    - reflector
-    - bc
-    - ranger
-    - strace
-    - lsof
-    - sysstat
-    - arch-wiki-lite
-    - arch-wiki-docs
-    - python-keyring
-    - python-secretstorage
-    - fabric
-    - tig
-    - ruby
-    - pv
-    - minicom
-    - jq
-    - python-docs
-    - python2-docs
-    - screen
-    - units
-    - python-pipenv
+  # general-dev
+  - zsh
+  - vim
+  - git
+  - python2
+  - python3
+  - tmux
+  - ctags
+  - wget
+  - the_silver_surfer # ag
+  - htop
+  - zip
+  - unzip
+  - unrar
+  - p7zip
+  - bc
 
-filesystem_packages:
-    - dosfstools
-    - ntfs-3g
-    - exfat-utils
+  # documentation
+  - rfc
+  - arch-wiki-lite
+  - arch-wiki-docs
 
-browser_choices:
-    - firefox -P default
-    - firefox -P work
-    - firewarden chromium
-    - tor-browser-en
-    - play
-    - qcode
-    - "| xclip -selection c"
+  # dev
+  - base-devel
+  - cloc
 
-bootloader: grub
+packages-graphical:
+  # X
+  - xorg-server
+  - xorg-xrdb
+  - xorg-xrandr
+  - xorg-xinit
+  - xorg-xset
+  - xorg-xev
 
-display_manager: lightdm
+  # TODO
+  - libva-intel-driver
 
-desktop_environment: i3
+  # Wayland
+  - {name: sway, desc: Wayland compositor}
 
-base_fonts:
-    - terminus-font
-    - cantarell-fonts
-    - noto-fonts
-    - ttf-dejavu
-    - ttf-liberation
-    - ttf-symbola
-    - gsfonts
-    - tex-gyre-fonts
-    - ttf-droid
-    - ttf-ubuntu-font-family
-    - ttf-inconsolata
+  # input
+  - ibus
+  - {name: ibus-mozc, type: aur}
 
-aur_fonts:
-    - ttf-signika
-    - ttf-quintessential
-    - ttf-oswald
-    - ttf-opensans
-    - ttf-merriweather-sans
-    - ttf-merriweather
-    - ttf-carlito
-    - ttf-caladea
-    - ttf-courier-prime
-    - ttf-heuristica
+  # helpers
+  - maim
+  - slop
+
+  # theming
+  - gnome-themes-standard
+  - arc-gtk-theme
+  - gtk-engine-murrine
+
+  # fonts
+  - terminus-font
+  - noto-fonts-cjk
+  - ttf-liberation
+  - ttf-sazanami
+
+  # standard programs
+  - {name: termite, desc: standard terminal emulator}
+  - {name: gvim, desc: standard graphical editor}
+  - {name: emacs, desc: emacs}
+  - {name: firefox, desc: standard browser}
+  - {name: sxiv, desc: standard image viewer}
+  - {name: zathura, desc: standard PDF viewer}
+  - zathura-pdf-poppler
+  - {name: mpv, desc: standard media player}
+  - simple-scan
+
+  # personal programs
+  - anki
+  - claws-mail
+
+packages-personal:
+  # android
+  - {name: jtmpfs, type: aur}
+
+  # general apps
+  - mpd
+  - ncmpcpp
+  - {name: mpdscribble, type: aur}
+  - imagemagick
+  - weechat
+  - ranger
+  - {name: dhex, desc: useful hex editor/viewer}
+
+  # fun
+  - cmatrix
+  - fortune-mod
+  - figlet
+
+  # games
+  - retroarch
+  - steam
+
+  # networking, mounting, etc.
+  - {name: sshfs, desc: mount an SSH target on a directory}
+  - {name: fuseiso, desc: mount ISOs in userspace}
+  - smbnetfs
+
+  # printing
+  - cups
+
+  # tex
+  - texlive-most
+
+  # wine
+  - wine-staging
+  - wine-mono
+  - wine_gecko
+  - winetricks
+
+packages-extra-pigmonkey:
+  - reflector
+  - strace
+  - lsof
+  - sysstat
+  - python-keyring
+  - python-secretstorage
+  - tig
+  - ruby
+  - pv
+  - python-docs
+  - python2-docs
+  - python-pipenv

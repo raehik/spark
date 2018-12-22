@@ -3,11 +3,13 @@
   become: yes
   roles:
     - { role: base, tags: ['base'] }
+    - { role: locale, tags: ['locale'] }
+    - { role: localtime, tags: ['localtime'], when: "localtime is defined" }
+    - { role: ssh, tags: ['ssh'] }
     - { role: gnupg, tags: ['gnupg'] }
     - { role: cron, tags: ['cron'] }
     - { role: microcode, tags: ['microcode'], when: "'GenuineIntel' in ansible_processor" }
     - { role: hardened, tags: ['hardened'] }
-    - { role: ssh, tags: ['ssh'] }
     - { role: dotfiles, tags: ['dotfiles'] }
     - { role: ssd, tags: ['ssd'] }
     - { role: fonts, tags: ['fonts'] }
@@ -63,7 +65,6 @@
     - { role: calibre, tags: ['calibre'] }
     - { role: aws, tags: ['aws'] }
     - { role: parcimonie, tags: ['parcimonie'], when: "tor is defined" }
-    - { role: localtime, tags: ['localtime'], when: "localtime is defined" }
     - { role: wormhole, tags: ['wormhole'] }
     - { role: bluetooth, tags: ['bluetooth'], when: "bluetooth is defined" }
     - { role: wttr, tags: ['wttr'] }
