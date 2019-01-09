@@ -1,4 +1,6 @@
 # vim: ft=yaml
+bootloader: grub
+
 journal:
   max_size: 500M
 
@@ -27,7 +29,6 @@ user:
 
 ssh:
   port: 22
-  user_key: /root/id_rsa
   enable_sshd: False
 gnupg:
   enable_agent: True

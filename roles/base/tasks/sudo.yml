@@ -4,6 +4,12 @@
   tags:
     - sudo
 
+- name: Create sudo group
+  group: name=sudo state=present
+  tags:
+    - sudo
+    - user
+
 - name: Add user to sudo group
   user: name={{ user.name }} groups=sudo append=yes
   tags:
