@@ -4,8 +4,8 @@
   tags:
     - sudo
 
-- name: Add user to wheel group
-  user: name={{ user.name }} groups=wheel append=yes
+- name: Add user to sudo group
+  user: name={{ user.name }} groups=sudo append=yes
   tags:
     - sudo
     - user

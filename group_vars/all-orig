@@ -1,0 +1,49 @@
+aur:
+    dir: aur
+    packages:
+        - yay
+
+video_drivers:
+    - libva-intel-driver
+
+base_packages:
+    - base-devel
+    - pacman-contrib
+    - fwupd
+    - tmux
+    - git
+    - rsync
+    - glances
+    - coreutils
+    - moreutils
+    - dateutils
+    - bc
+    - ranger
+    - strace
+    - lsof
+    - sysstat
+    - arch-wiki-lite
+    - arch-wiki-docs
+    - python-keyring
+    - python-secretstorage
+    - tig
+    - ruby
+    - pv
+    - minicom
+    - jq
+    - python-docs
+    - python2-docs
+    - screen
+    - units
+    - python-pipenv
+
+filesystem_packages:
+    - dosfstools
+    - ntfs-3g
+    - exfat-utils
+
+base_fonts:
+    - terminus-font
+    - noto-fonts-cjk
+    - ttf-liberation
+    - ttf-sazanami

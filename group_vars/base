@@ -18,17 +18,12 @@ hostsctl:
 user:
   name: raehik
   group: raehik
-  uid: 1000
+  uid: 1100
   shell: /usr/bin/zsh
   email: thefirstmuffinman@gmail.com
   log:
     dir: log
     rotate: 8
-
-network:
-  spoof_mac: True
-  conn_check:
-    interval: 0
 
 ssh:
   port: 22
