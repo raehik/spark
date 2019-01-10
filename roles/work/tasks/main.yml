@@ -1,5 +1,12 @@
 ---
 - name: Install development environment: Kubernetes
+  pacman:
+    name: docker
+    state: present
+  tags:
+    - go
+    - work
+- name: Install development environment (AUR): Kubernetes
   aur:
     name: kubectl-bin,minikube
     user: {{user.name}}
