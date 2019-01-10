@@ -1,0 +1,9 @@
+---
+- name: Install development environment: Kubernetes
+  aur:
+    name: kubectl-bin,minikube
+    user: {{user.name}}
+  tags:
+    - aur
+    - go
+    - work
