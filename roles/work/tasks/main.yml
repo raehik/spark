@@ -1,4 +1,12 @@
 ---
+- name: Install Slack
+  aur:
+    name: slack-desktop
+    user: {{user.name}}
+  tags:
+    - aur
+    - work
+
 - name: Install development environment: Kubernetes
   pacman:
     name: docker
