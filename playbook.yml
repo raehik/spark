@@ -4,12 +4,12 @@
   roles:
     - { role: systemd-boot, tags: ['systemd-boot'] }
     - { role: base, tags: ['base'] }
-    - { role: hardened, tags: ['hardened'] }
+      #- { role: hardened, tags: ['hardened'] }
     - { role: microcode, tags: ['microcode'], when: "'GenuineIntel' in ansible_processor" }
     - { role: locale, tags: ['locale'] }
     - { role: hostsctl, tags: ['hostsctl'], when: "hostsctl is defined" }
     - { role: localtime, tags: ['localtime'], when: "localtime is defined" }
-    - { role: ssd, tags: ['ssd'] }
+    - { role: ssd, tags: ['ssd'] } # only does anything if /dev/sda is an SSD
     - { role: laptop, tags: ['laptop'] }
     - { role: ssh, tags: ['ssh'] }
     - { role: gnupg, tags: ['gnupg'] }
@@ -17,8 +17,8 @@
     - { role: sound, tags: ['sound'] }
     - { role: pass, tags: ['pass'] }
     - { role: iptables, tags: ['iptables'] }
-    - { role: nettools, tags: ['nettools'] }
     - { role: networkmanager, tags: ['networkmanager'] }
+      #- { role: nettools, tags: ['nettools'] }
     - { role: macchiato, tags: ['macchiato'] }
     - { role: ntp, tags: ['ntp'] }
       #- { role: dotfiles, tags: ['dotfiles'] }
