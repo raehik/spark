@@ -1,12 +1,18 @@
 ---
 - name: Install systemd-boot bootloader
   command: bootctl --path=/boot install
+  tags:
+    - systemd-boot
 
 - name: Install systemd-boot config
   template:
     src: loader.conf.j2
     dest: /boot/loader/loader.conf
+  tags:
+    - systemd-boot
 - name: Install systemd-boot entries
   copy:
     src: entries
     dest: /boot/loader
+  tags:
+    - systemd-boot

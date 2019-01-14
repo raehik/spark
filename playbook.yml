@@ -2,6 +2,7 @@
 - hosts: localhost
   become: yes
   roles:
+    - { role: systemd-boot, tags: ['systemd-boot'] }
     - { role: base, tags: ['base'] }
     - { role: hardened, tags: ['hardened'] }
     - { role: microcode, tags: ['microcode'], when: "'GenuineIntel' in ansible_processor" }
