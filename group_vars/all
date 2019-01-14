@@ -1,9 +1,8 @@
 # vim: ft=yaml
-hostname: phy-nix-arch-testy
+hostname: phy-nix-arch-lennyb
 # vim: ft=yaml
 journal:
   max_size: 500M
-bootloader: grub
 
 locale:
   system: en_US.UTF-8
