@@ -7,12 +7,33 @@
     - aur
     - work
 
-- name: Install development environment: Kubernetes
+- name: Install development environment: AWS
   pacman:
-    name: docker
+    name: aws-cli
     state: present
   tags:
-    - go
+    - work
+- name: Install development environment (AUR): AWS
+  aur:
+    name: aws-vault
+    user: {{user.name}}
+  tags:
+    - aur
+    - work
+
+- name: Install development environment (AUR): Kubernetes
+  aur:
+    name: kubectl-bin,minikube
+    user: {{user.name}}
+  tags:
+    - aur
+    - work
+
+- name: Install development environment: Kubernetes
+  pacman:
+    name: docker,virtualbox,virtualbox-host-modules-arch
+    state: present
+  tags:
     - work
 - name: Install development environment (AUR): Kubernetes
   aur:
@@ -20,7 +41,6 @@
     user: {{user.name}}
   tags:
     - aur
-    - go
     - work
 
 - name: Install Chromium
