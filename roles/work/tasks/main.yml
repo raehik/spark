@@ -22,3 +22,10 @@
     - aur
     - go
     - work
+
+- name: Install Chromium
+  pacman:
+    name: chromium
+    state: present
+  tags:
+    - work
