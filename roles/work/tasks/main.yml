@@ -2,43 +2,35 @@
 - name: Install Slack
   aur:
     name: slack-desktop
-    user: {{user.name}}
+    user: "{{user.name}}"
   tags:
     - aur
     - work
 
-- name: Install development environment: AWS
+- name: "Install development environment: AWS"
   pacman:
     name: aws-cli
     state: present
   tags:
     - work
-- name: Install development environment (AUR): AWS
+- name: "Install development environment (AUR): AWS"
   aur:
     name: aws-vault
-    user: {{user.name}}
+    user: "{{user.name}}"
   tags:
     - aur
     - work
 
-- name: Install development environment (AUR): Kubernetes
-  aur:
-    name: kubectl-bin,minikube
-    user: {{user.name}}
-  tags:
-    - aur
-    - work
-
-- name: Install development environment: Kubernetes
+- name: "Install development environment: Kubernetes"
   pacman:
     name: docker,virtualbox,virtualbox-host-modules-arch
     state: present
   tags:
     - work
-- name: Install development environment (AUR): Kubernetes
+- name: "Install development environment (AUR): Kubernetes"
   aur:
-    name: kubectl-bin,minikube
-    user: {{user.name}}
+    name: kubectl-bin,kops-bin,minikube
+    user: "{{user.name}}"
   tags:
     - aur
     - work
