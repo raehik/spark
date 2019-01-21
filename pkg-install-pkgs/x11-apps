@@ -1,0 +1,12 @@
+flashplugin
+pavucontrol
+aur: pasystray-git
+
+# picard requirements
+picard
+chromaprint
+libdiscid
+# ALSO: pip2 install discid
+
+# for setting desktop background
+feh

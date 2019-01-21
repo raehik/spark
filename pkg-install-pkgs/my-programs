@@ -1,0 +1,22 @@
+# GITHUB FILE
+raehik/bashplate
+$HOME/.local/share/bashplate
+
+raehik/pyplater
+$HOME/proj/coding/programs/pyplater
+./install
+raehik/markdown-render
+$HOME/proj/coding/programs/markdown-render
+ln -s $HOME/proj/coding/programs/markdown-render/markdown-render $HOME/bin
+raehik/redcarpet-custom
+$HOME/proj/coding/programs/redcarpet-custom
+ln -s $HOME/proj/coding/programs/redcarpet-custom/redcarpet-custom.rb $HOME/bin ; ln -s $HOME/proj/coding/programs/redcarpet-custom/redcarpet-custom-wrapper.rb $HOME/bin
+raehik/xinput-keylog
+$HOME/proj/coding/programs/xinput-keylog
+ln -s $HOME/proj/coding/programs/xinput-keylog/xinput-keylog $HOME/bin
+raehik/musctl
+$HOME/proj/coding/programs/musctl
+ln -s $HOME/proj/coding/programs/musctl/musctl.py $HOME/bin
+raehik/mp3ctl
+$HOME/proj/coding/programs/mp3ctl
+ln -s $HOME/proj/coding/programs/mp3ctl/mp3ctl.py $HOME/bin

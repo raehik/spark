@@ -4,6 +4,7 @@
     name: "{{ item }}"
     state: present
   with_items: "{{ locale.present }}"
+
 - name: Set system locale
   template:
     src: locale.conf.j2

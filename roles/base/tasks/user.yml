@@ -5,7 +5,13 @@
     - user
 
 - name: Create user and assign to user group
-  user: name={{ user.name }} group={{ user.group }} password={{ user_password|password_hash('sha512') }} shell={{ user.shell }} update_password=on_create uid={{ user.uid }}
+  user:
+    name: "{{ user.name }}"
+    group: "{{ user.group }}"
+    uid: "{{ user.uid }}"
+    password: "{{ user_password|password_hash('sha512') }}"
+    shell: "{{ user.shell }}"
+    update_password: on_create
   tags:
     - user
 

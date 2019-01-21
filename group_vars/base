@@ -1,7 +1,4 @@
 # vim: ft=yaml
-journal:
-  max_size: 500M
-
 locale:
   system: en_US.UTF-8
   present:
@@ -9,11 +6,8 @@ locale:
     - en_GB.UTF-8
     - ja_JP.UTF-8
 
-localtime:
-  run_on: trusted
-
-hostsctl:
-  url: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+journal:
+  max_size: 500M
 
 user:
   name: raehik
@@ -27,7 +21,12 @@ user:
 
 ssh:
   port: 22
-  enable_sshd: False
+  enable_sshd: True
+  allowed_users_group: ssh-user
+
+hostsctl:
+  url: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+
 gnupg:
   enable_agent: True
   emulate_ssh: True

@@ -1,4 +1,7 @@
 ---
+- name: Install light
+  pacman: name=light state=present
+
 - name: Install Xorg
   pacman: name=xorg-server state=present
 

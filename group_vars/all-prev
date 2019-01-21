@@ -1,0 +1,237 @@
+# vim: ft=yaml
+hostname: phy-nix-arch-lennyb
+# vim: ft=yaml
+journal:
+  max_size: 500M
+
+locale:
+  system: en_US.UTF-8
+  present:
+    - en_US.UTF-8
+    - en_GB.UTF-8
+    - ja_JP.UTF-8
+
+localtime:
+  run_on: trusted
+
+hostsctl:
+  url: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+
+user:
+  name: raehik
+  group: raehik
+  uid: 1100
+  shell: /usr/bin/zsh
+  email: thefirstmuffinman@gmail.com
+  log:
+    dir: log
+    rotate: 8
+
+network:
+  spoof_mac: True
+  conn_check:
+    interval: 0
+  trusted_uuid:
+    - 12341234-1234-1234-1234-123412341234
+
+ssh:
+  port: 22
+  enable_sshd: False
+gnupg:
+  enable_agent: True
+  emulate_ssh: True
+# vim: ft=yaml
+packages-base:
+  - {name: yay, type: aur, desc: AUR helper}
+
+  # ssh
+  - openssh
+  - rxvt-unicode-terminfo
+  - termite-terminfo
+
+  # filesystems
+  - gptfdisk
+  - e2fsprogs
+  - dosfstools
+  - ntfs-3g
+
+  # general
+  - rsync
+  - acpi
+
+  # general-dev
+  - zsh
+  - vim
+  - git
+  - python2
+  - python3
+  - tmux
+  - ctags
+  - wget
+  - the_silver_surfer # ag
+  - htop
+  - zip
+  - unzip
+  - unrar
+  - p7zip
+  - bc
+
+  # documentation
+  - rfc
+  - arch-wiki-lite
+  - arch-wiki-docs
+
+  # dev
+  - base-devel
+  - cloc
+
+packages-graphical:
+  # X
+  - xorg-server
+  - xorg-xrdb
+  - xorg-xrandr
+  - xorg-xinit
+  - xorg-xset
+  - xorg-xev
+
+  # TODO
+  - libva-intel-driver
+
+  # Wayland
+  - {name: sway, desc: Wayland compositor}
+
+  # input
+  - ibus
+  - {name: ibus-mozc, type: aur}
+
+  # helpers
+  - maim
+  - slop
+
+  # theming
+  - gnome-themes-standard
+  - arc-gtk-theme
+  - gtk-engine-murrine
+
+  # fonts
+  - terminus-font
+  - noto-fonts-cjk
+  - ttf-liberation
+  - ttf-sazanami
+
+  # standard programs
+  - {name: termite, desc: standard terminal emulator}
+  - {name: gvim, desc: standard graphical editor}
+  - {name: emacs, desc: emacs}
+  - {name: firefox, desc: standard browser}
+  - {name: sxiv, desc: standard image viewer}
+  - {name: zathura, desc: standard PDF viewer}
+  - zathura-pdf-poppler
+  - {name: mpv, desc: standard media player}
+  - simple-scan
+
+  # personal programs
+  - anki
+  - claws-mail
+
+packages-personal:
+  # android
+  - {name: jtmpfs, type: aur}
+
+  # general apps
+  - mpd
+  - ncmpcpp
+  - {name: mpdscribble, type: aur}
+  - imagemagick
+  - weechat
+  - ranger
+  - {name: dhex, desc: useful hex editor/viewer}
+
+  # fun
+  - cmatrix
+  - fortune-mod
+  - figlet
+
+  # games
+  - retroarch
+  - steam
+
+  # networking, mounting, etc.
+  - {name: sshfs, desc: mount an SSH target on a directory}
+  - {name: fuseiso, desc: mount ISOs in userspace}
+  - smbnetfs
+
+  # printing
+  - cups
+
+  # tex
+  - texlive-most
+
+  # wine
+  - wine-staging
+  - wine-mono
+  - wine_gecko
+  - winetricks
+
+packages-extra-pigmonkey:
+  - reflector
+  - strace
+  - lsof
+  - sysstat
+  - python-keyring
+  - python-secretstorage
+  - tig
+  - ruby
+  - pv
+  - python-docs
+  - python2-docs
+  - python-pipenv
+aur:
+    dir: aur
+    packages:
+        - yay
+
+video_drivers:
+    - libva-intel-driver
+
+base_packages:
+    - base-devel
+    - pacman-contrib
+    - fwupd
+    - tmux
+    - git
+    - rsync
+    - glances
+    - coreutils
+    - moreutils
+    - dateutils
+    - bc
+    - ranger
+    - strace
+    - lsof
+    - sysstat
+    - arch-wiki-lite
+    - arch-wiki-docs
+    - python-keyring
+    - python-secretstorage
+    - tig
+    - ruby
+    - pv
+    - minicom
+    - jq
+    - python-docs
+    - python2-docs
+    - screen
+    - units
+    - python-pipenv
+
+filesystem_packages:
+    - dosfstools
+    - ntfs-3g
+    - exfat-utils
+
+base_fonts:
+    - terminus-font
+    - noto-fonts-cjk
+    - ttf-liberation
+    - ttf-sazanami
